@@ -23,7 +23,17 @@ const CardDate = styled.div`
   color: #999;
 `
 
-function Post({ post }) {
+type PostProps = {
+  post: {
+    date: string
+    title: string
+    slug: string
+    tags: string
+    category: string
+  }
+}
+
+function Post({ post }: PostProps) {
   const { date, title, slug, tags, category } = post
 
   if (!slug) {

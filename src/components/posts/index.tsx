@@ -17,7 +17,7 @@ const PostContainer = styled.ul`
   box-sizing: border-box;
 `
 
-function Posts() {
+export default function Posts() {
   const posts = [
     {
       date: '2012-10-20',
@@ -31,12 +31,10 @@ function Posts() {
     <Section>
       <Title>최근 포스트.</Title>
       <PostContainer>
-        {posts.map((post) => (
-          <Post post={post} />
+        {posts.map((post, idx) => (
+          <Post key={idx} post={post} />
         ))}
       </PostContainer>
     </Section>
   )
 }
-
-export default Posts

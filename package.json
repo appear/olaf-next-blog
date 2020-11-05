@@ -16,6 +16,8 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "@types/react": "^16.9.55",
+    "@types/styled-components": "^5.1.4",
     "eslint-config-olaf": "0.0.1",
     "typescript": "^4.0.5"
   }
