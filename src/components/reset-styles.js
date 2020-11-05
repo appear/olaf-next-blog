@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
 html, body, div, span, applet, object, iframe,
@@ -48,4 +48,4 @@ table {
 }
 a {color: #444; text-decoration: none; outline: none}
 a:hover, a:active {text-decoration: none; color:#444; background-color:#fff;}
-`;
+`

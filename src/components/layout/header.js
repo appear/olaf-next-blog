@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const HeaderContainer = styled.div`
   position: relative;
@@ -8,7 +8,7 @@ const HeaderContainer = styled.div`
   max-width: 800px;
   margin: 0 auto;
   margin-bottom: 40px;
-`;
+`
 
 const Logo = styled.h1`
   display: inline-block;
@@ -16,24 +16,24 @@ const Logo = styled.h1`
   padding-left: 20px;
   font-size: 25px;
   font-weight: bold;
-`;
+`
 
 const MenuListContainer = styled.ul`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 20px;
-`;
+`
 const MenuContainer = styled.li`
   float: left;
   &:not(:last-child) {
     margin-right: 10px;
   }
-`;
+`
 const Label = styled.span`
   font-size: 14px;
   font-weight: bold;
-`;
+`
 
 function Header() {
   return (
@@ -54,7 +54,7 @@ function Header() {
         </MenuContainer>
       </MenuListContainer>
     </HeaderContainer>
-  );
+  )
 }
 
-export default Header;
+export default Header
