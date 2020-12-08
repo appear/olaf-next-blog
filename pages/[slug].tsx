@@ -12,7 +12,7 @@ interface PostProps {
 function Post({ rawData }: PostProps) {
   const data = useMemo(() => matter(rawData), [rawData])
   const {
-    data: { category, date, slug, summary, thumbnail, tags, title },
+    data: { category, date, slug, summary, thumbnail, title },
   } = data
   console.log('data', data)
 

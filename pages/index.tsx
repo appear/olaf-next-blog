@@ -1,21 +1,26 @@
 import React, { useMemo } from 'react'
-import Head from 'next/head'
 import matter from 'gray-matter'
 import Link from 'next/link'
+import styled from 'styled-components'
 
 import Layout from '../src/components/layout'
 import siteMeta from '../config'
 import { getAllFiles } from '../src/utils/file'
-import Posts from '../src/components/posts'
+import Card, { Post } from '../src/components/posts/post'
 
 interface HomeProps {
   rawData: string[]
 }
 
-export default function Home({ rawData }: HomeProps) {
-  const data = useMemo(() => rawData.map((raw) => matter(raw)), [rawData])
+const ListContainer = styled.ul``
+const Title = styled.h1`
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+`
 
-  console.log(data)
+export default function MainPage({ rawData }: HomeProps) {
+  const data = useMemo(() => rawData.map((raw) => matter(raw)), [rawData])
 
   return (
     <Layout
@@ -23,16 +28,12 @@ export default function Home({ rawData }: HomeProps) {
         ...siteMeta,
       }}
     >
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      {data.map(({ data: { slug, title } }) => (
-        <Link href={`/${slug}`} key={slug}>
-          {title}
-        </Link>
-      ))}
-      {/* <Posts data={data} /> */}
+      <Title>최근 포스트.</Title>
+      <ListContainer>
+        {data.map(({ data }) => (
+          <Card key={data.slug} post={data as Post} />
+        ))}
+      </ListContainer>
     </Layout>
   )
 }

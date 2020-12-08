@@ -1,9 +1,9 @@
 ---
-slug: test
-title: 리액트란 무엇인가
-summary: 리액트에 대해서 다룹니다
+slug: test-02
+title: 김춘삼에 대하여 .....
+summary: 그의 움직임이 수상하다 ..
 date: 2020-11-09
-category: REACT
+category: 김춘삼
 ---
 
 # 리액트란 무엇인가 ?

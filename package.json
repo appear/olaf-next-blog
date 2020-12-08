@@ -12,6 +12,7 @@
     "prettier:fix": "prettier --write \"./**/*.{json,yaml,md}\""
   },
   "dependencies": {
+    "date-fns": "^2.16.1",
     "gray-matter": "^4.0.2",
     "next": "10.0.0",
     "promise-fs": "^2.1.1",
@@ -22,6 +23,7 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "@types/date-fns": "^2.6.0",
     "@types/node": "^14.14.6",
     "@types/promise-fs": "^2.1.1",
     "@types/react": "^16.9.55",

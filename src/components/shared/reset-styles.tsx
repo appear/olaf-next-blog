@@ -30,6 +30,7 @@ body {
     line-height: 1;
 	color: #444;
 	font-family: 'NanumSquare', sans-serif; 
+	font-size: 15px;
 }
 ol, ul {
 	list-style: none;
