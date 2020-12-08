@@ -2,7 +2,7 @@ import React from 'react'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import ResetStyles from '../src/components/reset-styles'
+import ResetStyles from '../src/components/shared/reset-styles'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
