@@ -10,12 +10,18 @@
     "prettier": "prettier ."
   },
   "dependencies": {
+    "gray-matter": "^4.0.2",
     "next": "10.0.0",
+    "promise-fs": "^2.1.1",
+    "raw-loader": "^4.0.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-markdown": "^5.0.2",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "@types/node": "^14.14.6",
+    "@types/promise-fs": "^2.1.1",
     "@types/react": "^16.9.55",
     "@types/styled-components": "^5.1.4",
     "eslint-config-olaf": "0.0.1",
