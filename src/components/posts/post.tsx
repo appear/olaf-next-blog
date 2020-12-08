@@ -24,6 +24,7 @@ const Body = styled.div`
 const Title = styled.div`
   font-size: 18px;
   font-weight: 700;
+  line-height: 1.25;
 `
 
 const Summary = styled.div`
