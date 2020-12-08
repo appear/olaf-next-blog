@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import Head from 'next/head'
 import matter from 'gray-matter'
+import Link from 'next/link'
 
 import Layout from '../src/components/layout'
 import { getAllFiles } from '../src/utils/file'
@@ -17,15 +18,18 @@ interface HomeProps {
 export default function Home({ rawData, siteMeta }: HomeProps) {
   const data = useMemo(() => rawData.map((raw) => matter(raw)), [rawData])
 
-  console.log('data', data)
-
   return (
     <Layout>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Posts />
+      {data.map(({ data: { slug, title } }) => (
+        <Link href={`/${slug}`} key={slug}>
+          {title}
+        </Link>
+      ))}
+      {/* <Posts data={data} /> */}
     </Layout>
   )
 }

@@ -13,3 +13,9 @@ export function getAllFiles() {
     return rawContent
   })
 }
+
+export async function getFile(slug: string) {
+  return fs.readFileSync(`${process.cwd()}/contents/${slug}.md`, {
+    encoding: 'utf-8',
+  })
+}

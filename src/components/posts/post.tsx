@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Link from 'next/link'
 
 const Conatiner = styled.li`
   margin: 10px 0;
@@ -44,10 +45,10 @@ function Post({ post }: PostProps) {
 
   return (
     <Conatiner>
-      <a to={slug}>
+      <Link href={`/${slug}`}>
         <CardTitle>{title}</CardTitle>
         <CardDate>{date}</CardDate>
-      </a>
+      </Link>
     </Conatiner>
   )
 }
