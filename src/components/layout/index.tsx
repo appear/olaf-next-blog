@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import GNB from './header'
+import GNB from '../shared/gnb'
 import Seo, { SEO } from '../shared/seo'
 
 const Container = styled.div`

@@ -1,12 +1,12 @@
 import React from 'react'
-import { AppProps, Container } from 'next/app'
+import { AppProps } from 'next/app'
 import Head from 'next/head'
 
 import ResetStyles from '../src/components/reset-styles'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Container>
+    <>
       <Head>
         <link
           rel="stylesheet"
@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <ResetStyles />
       <Component {...pageProps} />
-    </Container>
+    </>
   )
 }
 
