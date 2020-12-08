@@ -6,8 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint .",
-    "prettier": "prettier ."
+    "lint": "eslint ./",
+    "lint:fix": "eslint --fix",
+    "prettier": "prettier --check \"./**/*.{json,yaml,md}\"",
+    "prettier:fix": "prettier --write \"./**/*.{json,yaml,md}\""
   },
   "dependencies": {
     "gray-matter": "^4.0.2",
