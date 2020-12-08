@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Link from 'next/link'
 
 const HeaderContainer = styled.div`
   position: relative;
@@ -8,14 +9,6 @@ const HeaderContainer = styled.div`
   max-width: 800px;
   margin: 0 auto;
   margin-bottom: 40px;
-`
-
-const Logo = styled.h1`
-  display: inline-block;
-  line-height: 52px;
-  padding-left: 20px;
-  font-size: 25px;
-  font-weight: bold;
 `
 
 const MenuListContainer = styled.ul`
@@ -30,7 +23,7 @@ const MenuContainer = styled.li`
     margin-right: 10px;
   }
 `
-const Label = styled.span`
+const Label = styled(Link)`
   font-size: 14px;
   font-weight: bold;
 `
@@ -40,13 +33,14 @@ function Header() {
     <HeaderContainer>
       <MenuListContainer>
         <MenuContainer>
-          <Label to="/posts">글</Label>
+          <Label href="/">글</Label>
         </MenuContainer>
         <MenuContainer>
-          <Label>
+          <Label href="">
             <a
-              to="https://www.linkedin.com/in/%EC%84%9D%EC%A7%84-%EA%B3%A0-a0a5a5128/"
+              href="https://www.linkedin.com/in/%EC%84%9D%EC%A7%84-%EA%B3%A0-a0a5a5128/"
               target="_blank"
+              rel="noreferrer"
             >
               링크드인
             </a>

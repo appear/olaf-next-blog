@@ -4,22 +4,25 @@ import matter from 'gray-matter'
 import Link from 'next/link'
 
 import Layout from '../src/components/layout'
+import siteMeta from '../config'
 import { getAllFiles } from '../src/utils/file'
 import Posts from '../src/components/posts'
 
 interface HomeProps {
   rawData: string[]
-  siteMeta: {
-    title: string
-    description: string
-  }
 }
 
-export default function Home({ rawData, siteMeta }: HomeProps) {
+export default function Home({ rawData }: HomeProps) {
   const data = useMemo(() => rawData.map((raw) => matter(raw)), [rawData])
 
+  console.log(data)
+
   return (
-    <Layout>
+    <Layout
+      seo={{
+        ...siteMeta,
+      }}
+    >
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -35,13 +38,11 @@ export default function Home({ rawData, siteMeta }: HomeProps) {
 }
 
 export async function getStaticProps() {
-  const siteData = await import(`../config.json`)
   const rawData = getAllFiles()
 
   return {
     props: {
       rawData,
-      siteMeta: siteData.default,
     },
   }
 }
