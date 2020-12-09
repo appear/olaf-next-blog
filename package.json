@@ -1,6 +1,6 @@
 {
   "name": "dev-olaf-blog",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,10 +14,7 @@
   },
   "dependencies": {
     "date-fns": "^2.16.1",
-    "gray-matter": "^4.0.2",
     "next": "10.0.0",
-    "promise-fs": "^2.1.1",
-    "raw-loader": "^4.0.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-markdown": "^5.0.2",
@@ -30,6 +27,8 @@
     "@types/react": "^16.9.55",
     "@types/styled-components": "^5.1.4",
     "babel-plugin-styled-components": "^1.12.0",
+    "gray-matter": "^4.0.2",
+    "raw-loader": "^4.0.2",
     "chalk": "^4.1.0",
     "commander": "^6.2.0",
     "eslint-config-olaf": "0.0.1",
