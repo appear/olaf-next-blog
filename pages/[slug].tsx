@@ -1,9 +1,26 @@
 import React, { useMemo } from 'react'
+import { format } from 'date-fns'
 import { NextPageContext } from 'next'
 import matter from 'gray-matter'
+import ReactMarkdown from 'react-markdown'
+import styled from 'styled-components'
 
 import Layout from '../src/components/layout'
 import { getFile } from '../src/utils/file'
+import style from '../src/components/post/style'
+
+const Container = styled.div`
+  ${style}
+
+  padding-bottom: 70px;
+`
+
+const Header = styled.div`
+  font-size: 14px;
+  text-align: right;
+  opacity: 0.6;
+  margin-bottom: 15px;
+`
 
 interface PostProps {
   rawData: string
@@ -12,7 +29,8 @@ interface PostProps {
 function Post({ rawData }: PostProps) {
   const data = useMemo(() => matter(rawData), [rawData])
   const {
-    data: { slug, summary, title },
+    data: { slug, summary, title, date, category },
+    content,
   } = data
 
   return (
@@ -23,7 +41,13 @@ function Post({ rawData }: PostProps) {
         slug,
       }}
     >
-      <h1>Blog</h1>
+      <Container>
+        <Header>
+          <span>{format(date, 'yyyy-MM-dd')}</span>
+          {category && <span>{`  ·  ${category}`}</span>}
+        </Header>
+        <ReactMarkdown escapeHtml={true} source={content} />
+      </Container>
     </Layout>
   )
 }

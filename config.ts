@@ -2,7 +2,8 @@ export default {
   author: 'OLAF',
   title: 'OLAF',
   summary: 'OLAF-FRONT-DEV-BLOG',
-  thumbnail: '',
+  thumbnail:
+    'https://img.insight.co.kr/static/2017/11/22/700/2u2l3278puw12345e61p.jpg',
   url: '',
   link: {
     linkedIn:
