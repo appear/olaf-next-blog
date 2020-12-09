@@ -11,6 +11,13 @@ export type Post = {
   category: string
 }
 
+const line2Mixins = `overflow: hidden;
+text-overflow: ellipsis;
+word-wrap: break-word;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;`
+
 const Conatiner = styled.li`
   padding: 20px 0;
   box-sizing: border-box;
@@ -25,12 +32,15 @@ const Title = styled.div`
   font-size: 18px;
   font-weight: 700;
   line-height: 1.25;
+  ${line2Mixins}
 `
 
 const Summary = styled.div`
   font-size: 14px;
   margin-top: 6px;
   opacity: 0.8;
+  line-height: 1.25;
+  ${line2Mixins}
 `
 
 const Footer = styled.div`
@@ -61,7 +71,7 @@ function Card({ post }: CardProps) {
         <Text>{format(date, 'yyyy-MM-dd')}</Text>
         {category && (
           <Link href={`/category/${category}`}>
-            <Text>{` · ${category}`}</Text>
+            <Text as="a" href="#!">{` · ${category}`}</Text>
           </Link>
         )}
       </Footer>
