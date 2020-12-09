@@ -6,11 +6,11 @@ import siteMeta from '../../../config'
 
 const Container = styled.div`
   position: relative;
-  height: 52px;
+  top: 0;
   box-sizing: border-box;
+  padding: 30px 0;
   max-width: 800px;
   margin: 0 auto;
-  margin-bottom: 40px;
 `
 
 const ListContainer = styled.ul`

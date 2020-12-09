@@ -12,12 +12,12 @@ import style from '../src/components/post/style'
 const Container = styled.div`
   ${style}
 
+  margin-top: 30px;
   padding-bottom: 70px;
 `
 
 const Header = styled.div`
   font-size: 14px;
-  text-align: right;
   opacity: 0.6;
   margin-bottom: 15px;
 `
