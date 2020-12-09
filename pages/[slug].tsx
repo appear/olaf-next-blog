@@ -12,9 +12,8 @@ interface PostProps {
 function Post({ rawData }: PostProps) {
   const data = useMemo(() => matter(rawData), [rawData])
   const {
-    data: { category, date, slug, summary, thumbnail, title },
+    data: { slug, summary, title },
   } = data
-  console.log('data', data)
 
   return (
     <Layout

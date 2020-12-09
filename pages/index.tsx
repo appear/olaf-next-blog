@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react'
 import matter from 'gray-matter'
-import Link from 'next/link'
 import styled from 'styled-components'
 
 import Layout from '../src/components/layout'
