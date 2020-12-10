@@ -12,13 +12,14 @@ const Container = styled.div`
 interface LayoutProps {
   children: React.ReactNode
   seo?: SEO
+  hideGNB?: boolean
 }
 
-export default function Layout({ children, seo }: LayoutProps) {
+export default function Layout({ children, hideGNB, seo }: LayoutProps) {
   return (
     <>
       <Seo seo={seo} />
-      <GNB />
+      {!hideGNB && <GNB />}
       <Container>{children}</Container>
     </>
   )

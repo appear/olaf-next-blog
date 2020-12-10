@@ -23,15 +23,14 @@ const BaseImg = styled.img`
 
 interface ImageProps {
   src: string
-  ratio?: number
   alt?: string
 }
 
-function Image({ src, ratio, alt }: ImageProps) {
+function Image({ src, alt }: ImageProps) {
   return (
     <Wrapper>
       <Container>
-        <BaseImg src={src} alt="" />
+        <BaseImg src={src} alt={alt} />
       </Container>
     </Wrapper>
   )

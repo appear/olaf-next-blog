@@ -49,6 +49,12 @@ export default `
   p {
     margin-bottom: 16px;
     line-height: 1.8;
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
   }
 
   ul {
@@ -76,12 +82,6 @@ export default `
 
   li { 
     margin-bottom: 10px; 
-  }
-
-  img {
-    width: 100%;
-    border-radius: 8px;
-    margin: 20px 0;
   }
 
   hr {

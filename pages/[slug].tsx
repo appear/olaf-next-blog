@@ -40,6 +40,7 @@ function Post({ rawData }: PostProps) {
         title,
         summary,
         slug,
+        thumbnail,
       }}
     >
       {thumbnail && <Image src={thumbnail} alt="thumbnail" />}
