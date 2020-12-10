@@ -127,6 +127,39 @@ export default function MainPage() {
           </AppearSection>
         </HorizentalImageContainer>
         <Container>
+          <h3>초등학교 입학하는 잼민이</h3>
+          <p>
+            잼민이가 초등학교에 들어가요 <br />
+            기죽지말라고 브릿지 염색해줬어요
+          </p>
+        </Container>
+        <HorizentalImageContainer>
+          <AppearSection>
+            <BaseImage src="/image/school.jpg" />
+          </AppearSection>
+        </HorizentalImageContainer>
+        <Container>
+          <h3>배고픈 잼민이</h3>
+          <p>
+            잼민이가 처음 소고기를 먹은날이에요 <br />
+            혀부터 마중나가는 모습이 너무 귀여워요
+          </p>
+        </Container>
+        <HorizentalImageContainer>
+          <AppearSection>
+            <BaseImage src="/image/hungry.jpg" />
+          </AppearSection>
+        </HorizentalImageContainer>
+        <Container>
+          <h3>술쟁이 잼민이</h3>
+          <p>술 밖에 모르는 잼민이에요</p>
+        </Container>
+        <HorizentalImageContainer>
+          <AppearSection>
+            <BaseImage src="/image/onemore.jpg" />
+          </AppearSection>
+        </HorizentalImageContainer>
+        <Container>
           <h3>화내는 잼민이</h3>
           <p>
             맥주가 부족하면 잼민이는 화를 내요 <br />
