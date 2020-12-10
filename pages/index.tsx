@@ -2,6 +2,7 @@ import React, { useMemo } from 'react'
 import matter from 'gray-matter'
 import styled from 'styled-components'
 
+import AppearSection from '../src/components/shared/appear-section'
 import Layout from '../src/components/layout'
 import siteMeta from '../config'
 import { getAllFiles } from '../src/utils/file'
@@ -27,12 +28,14 @@ export default function MainPage({ rawData }: HomeProps) {
         ...siteMeta,
       }}
     >
-      <Title>최근 포스트.</Title>
-      <ListContainer>
-        {data.map(({ data }) => (
-          <Card key={data.slug} post={data as Post} />
-        ))}
-      </ListContainer>
+      <AppearSection>
+        <Title>최근 포스트.</Title>
+        <ListContainer>
+          {data.map(({ data }) => (
+            <Card key={data.slug} post={data as Post} />
+          ))}
+        </ListContainer>
+      </AppearSection>
     </Layout>
   )
 }
