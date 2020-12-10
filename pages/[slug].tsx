@@ -8,12 +8,13 @@ import styled from 'styled-components'
 import Layout from '../src/components/layout'
 import { getFile } from '../src/utils/file'
 import style from '../src/components/post/style'
+import Image from '../src/components/shared/image'
 
 const Container = styled.div`
   ${style}
 
+  padding: 0 20px 70px 20px;
   margin-top: 30px;
-  padding-bottom: 70px;
 `
 
 const Header = styled.div`
@@ -29,7 +30,7 @@ interface PostProps {
 function Post({ rawData }: PostProps) {
   const data = useMemo(() => matter(rawData), [rawData])
   const {
-    data: { slug, summary, title, date, category },
+    data: { slug, summary, title, date, category, thumbnail },
     content,
   } = data
 
@@ -41,6 +42,7 @@ function Post({ rawData }: PostProps) {
         slug,
       }}
     >
+      {thumbnail && <Image src={thumbnail} alt="thumbnail" />}
       <Container>
         <Header>
           <span>{format(date, 'yyyy-MM-dd')}</span>
