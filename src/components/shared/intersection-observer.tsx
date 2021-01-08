@@ -3,21 +3,16 @@ import ReactIntersectionObserver from '@researchgate/react-intersection-observer
 
 interface IntersectionObserverProps {
   active?: boolean
-  onActivate: () => void
+  onChange: (flag: boolean) => void
 }
 
 export default function IntersectionObserver({
-  active,
-  onActivate,
+  onChange,
   children,
 }: PropsWithChildren<IntersectionObserverProps>) {
   return (
     <ReactIntersectionObserver
-      onChange={
-        active
-          ? () => {}
-          : ({ isIntersecting }) => isIntersecting && onActivate()
-      }
+      onChange={({ isIntersecting }) => onChange(isIntersecting)}
     >
       <div>{children}</div>
     </ReactIntersectionObserver>

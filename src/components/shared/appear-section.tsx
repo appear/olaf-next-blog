@@ -25,7 +25,7 @@ export default function AppearSection({
   const [active, setActive] = useState(false)
 
   return (
-    <IntersectionObserver active={active} onActivate={() => setActive(true)}>
+    <IntersectionObserver onChange={() => setActive(true)}>
       <CSSTransition
         in={active}
         timeout={0}

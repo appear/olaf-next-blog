@@ -8,7 +8,6 @@ import styled from 'styled-components'
 import Layout from '../src/components/layout'
 import { getFile } from '../src/utils/file'
 import style from '../src/components/post/style'
-import Image from '../src/components/shared/image'
 
 const Container = styled.div`
   ${style}
@@ -43,7 +42,6 @@ function Post({ rawData }: PostProps) {
         thumbnail,
       }}
     >
-      {thumbnail && <Image src={thumbnail} alt="thumbnail" />}
       <Container>
         <Header>
           <span>{format(date, 'yyyy-MM-dd')}</span>
