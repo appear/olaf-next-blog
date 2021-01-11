@@ -20,8 +20,18 @@
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "typeRoots": ["./typings", "./node_modules/@types"]
+    "typeRoots": ["./typings", "./node_modules/@types"],
+    "paths": {
+      "$page/*": ["./pages/*"],
+      "$components/*": ["./src/components/*"],
+      "$layout/*": ["./src/components/layout/*"],
+      "$post/*": ["./src/components/post/*"],
+      "$posts/*": ["./src/components/posts/*"],
+      "$shared/*": ["./src/components/shared/*"],
+      "$types/*": ["./src/types/*"],
+      "$utils/*": ["./src/utils/*"]
+    }
   },
   "exclude": [".next"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "*.ts"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "*.ts"],
 }

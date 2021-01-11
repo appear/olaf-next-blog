@@ -8,6 +8,10 @@ import siteMeta from '../config'
 import { getAllRawPosts } from '../src/utils/file'
 import Card, { Post } from '../src/components/posts/post'
 
+import { generatePostsFormRawData } from '$posts/utils'
+
+console.log(generatePostsFormRawData)
+
 interface HomeProps {
   rawData: string[]
 }
@@ -20,9 +24,7 @@ const Title = styled.h1`
 `
 
 export default function MainPage({ rawData }: HomeProps) {
-  const data = useMemo(() => {
-    console.log(Object.entries(rawData))
-  }, [])
+  // console.log('data', generatePostsFormRawData(rawData))
 
   return (
     <Layout
