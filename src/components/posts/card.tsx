@@ -8,6 +8,7 @@ import { maxLine } from '$shared/mixins/text'
 
 const CardContainer = styled.div`
   margin: 35px 0;
+  cursor: pointer;
 `
 
 const CardTitle = styled.h2`
@@ -73,7 +74,7 @@ function Card({ category, posts }: CardProps) {
       <CardTitle># {category}</CardTitle>
       {posts.slice(0, 3).map(({ date, title, slug, summary, thumbnail }) => {
         return (
-          <Link href={`/${slug}`} key={slug}>
+          <Link href={`/category/${category}/${slug}`} key={slug}>
             <Conatiner>
               <Body>
                 <Title>{title}</Title>

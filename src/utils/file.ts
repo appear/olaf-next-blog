@@ -2,7 +2,7 @@ import fs from 'fs'
 
 export type Posts = Record<string, string[]>
 
-const CONTENTS_BASE_PATH = `${process.cwd()}/contents`
+export const CONTENTS_BASE_PATH = `${process.cwd()}/contents`
 
 export async function getAsyncDirFiles(path: string): Promise<string[]> {
   return new Promise((resolve) => {

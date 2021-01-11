@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 
-import AppearSection from '../src/components/shared/appear-section'
 import Layout from '../src/components/layout'
 import siteMeta from '../config'
 import { getAllRawPosts } from '../src/utils/file'
