@@ -3,6 +3,5 @@ export type Post = {
   title: string
   summary?: string
   date: Date
-  category?: string
   thumbnail?: string
 }

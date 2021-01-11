@@ -80,7 +80,7 @@ const BaseImage = styled.img`
 export default function MainPage() {
   return (
     <Layout
-      hideGNB
+      showGNB={false}
       seo={{
         title: '잼민이의 하루',
         summary: '참고로 비는 싫어함',

@@ -1,30 +1,24 @@
 import React, { useMemo } from 'react'
-import matter from 'gray-matter'
 import styled from 'styled-components'
 
 import AppearSection from '../src/components/shared/appear-section'
 import Layout from '../src/components/layout'
 import siteMeta from '../config'
 import { getAllRawPosts } from '../src/utils/file'
-import Card, { Post } from '../src/components/posts/post'
 
+import Card from '$posts/card'
 import { generatePostsFormRawData } from '$posts/utils'
 
-console.log(generatePostsFormRawData)
-
 interface HomeProps {
-  rawData: string[]
+  rawData: Record<string, string[]>
 }
 
-const ListContainer = styled.ul``
-const Title = styled.h1`
-  font-size: 25px;
-  font-weight: bold;
-  margin-bottom: 20px;
+const Container = styled.div`
+  padding: 0 20px;
 `
 
 export default function MainPage({ rawData }: HomeProps) {
-  // console.log('data', generatePostsFormRawData(rawData))
+  const contents = useMemo(() => generatePostsFormRawData(rawData), [rawData])
 
   return (
     <Layout
@@ -32,14 +26,11 @@ export default function MainPage({ rawData }: HomeProps) {
         ...siteMeta,
       }}
     >
-      <AppearSection>
-        <Title>최근 포스트.</Title>
-        <ListContainer>
-          {/* {data.map(({ data }) => (
-            <Card key={data.slug} post={data as Post} />
-          ))} */}
-        </ListContainer>
-      </AppearSection>
+      <Container>
+        {Object.entries(contents).map(([category, posts]) => {
+          return <Card key={category} category={category} posts={posts} />
+        })}
+      </Container>
     </Layout>
   )
 }

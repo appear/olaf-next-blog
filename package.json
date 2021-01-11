@@ -21,7 +21,7 @@
     "react-markdown": "^5.0.2",
     "react-transition-group": "^4.4.1",
     "styled-components": "^5.2.1",
-    "gray-matter": "^4.0.2",
+    "gray-matter": "^4.0.2"
   },
   "devDependencies": {
     "@types/date-fns": "^2.6.0",
