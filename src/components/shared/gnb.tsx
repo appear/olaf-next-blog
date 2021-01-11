@@ -27,7 +27,7 @@ const FixedContainer = styled(Container)`
 
   &.fade-base {
     opacity: 0;
-    transform: translateY(-20%);
+    transform: translateY(-100%);
   }
 
   &.fade-enter-done {
@@ -37,7 +37,7 @@ const FixedContainer = styled(Container)`
 
   &.fade-exit-done {
     opacity: 0;
-    transform: translateY(-20%);
+    transform: translateY(-100%);
   }
 `
 
@@ -53,26 +53,32 @@ const Menu = styled.li`
     margin-right: 10px;
   }
 `
-const Label = styled(Link)`
-  font-size: 14px;
-  font-weight: bold;
+const Text = styled.a`
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
 `
 
 function Links() {
+  const openLinkedIn = (e: React.MouseEvent) => {
+    /** TODO: click log */
+    e.preventDefault()
+    window.open(siteMeta.link.linkedIn, '_blank')
+  }
+
   return (
     <ListContainer>
       <Menu>
-        <Label href="/">메인</Label>
+        <Link href="/">
+          <Text>메인</Text>
+        </Link>
       </Menu>
       <Menu>
-        <Label
-          as="a"
-          href={siteMeta.link.linkedIn}
-          target="_blank"
-          rel="noreferrer"
-        >
-          링크드인
-        </Label>
+        <Link href={siteMeta.link.linkedIn}>
+          <Text href={siteMeta.link.linkedIn} onClick={openLinkedIn}>
+            링크드인
+          </Text>
+        </Link>
       </Menu>
     </ListContainer>
   )
