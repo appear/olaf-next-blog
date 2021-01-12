@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import ReactMarkdown from 'react-markdown'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { tomorrow } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+
 import { format } from 'date-fns'
 
 import { Post } from '$types/post'
@@ -28,6 +31,14 @@ interface MarkdownPostProps {
   category?: string
 }
 
+const CodeBlock = ({ language, value }) => {
+  return (
+    <SyntaxHighlighter language={language} style={tomorrow}>
+      {value}
+    </SyntaxHighlighter>
+  )
+}
+
 function MarkdownPost({
   post: { data, content },
   category,
@@ -40,7 +51,11 @@ function MarkdownPost({
         <span>{format(date, 'yyyy-MM-dd')}</span>
         {category && <span>{`  ·  ${category}`}</span>}
       </Header>
-      <ReactMarkdown escapeHtml={true} source={content} />
+      <ReactMarkdown
+        escapeHtml={true}
+        source={content}
+        renderers={{ code: CodeBlock }}
+      />
     </Container>
   )
 }

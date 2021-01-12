@@ -91,11 +91,17 @@ export default `
   }
   
   pre {
-    margin: 15px 0;
+    margin: 40px 0 !important;
+    border-radius: 4px;
+
+    code {
+      font-size: 14px !important;
+    }
   }
 
   strong {
     font-weight: 700;
-
   }
+
+  
 `
