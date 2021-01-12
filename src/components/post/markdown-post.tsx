@@ -20,7 +20,6 @@ const Container = styled.div`
 const Header = styled.div`
   font-size: 14px;
   opacity: 0.6;
-  margin-bottom: 15px;
 `
 
 interface MarkdownPostProps {

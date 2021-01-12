@@ -58,7 +58,8 @@ export default `
   }
 
   ul {
-    margin: 20px 0;
+    list-style: disc;
+    margin: 20px;
   }
   
   ol { 
@@ -67,17 +68,7 @@ export default `
   }
 
   ul li {
-    position: relative;
-    padding: 0 0 0 25px;
     margin-bottom: 10px;
-  }
-
-  ul li:before {
-    content: "👉";
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-weight: bold;
   }
 
   li { 
