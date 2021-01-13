@@ -7,25 +7,44 @@ import { Post } from '$types/post'
 import { maxLine } from '$shared/mixins/text'
 
 const CardContainer = styled.div`
-  margin: 35px 0;
+  margin: 35px 0 45px 0;
   cursor: pointer;
 `
 
 const CardTitle = styled.h2`
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 700;
+  margin: 0 20px 20px 20px;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: -3px;
+    right: -3px;
+    height: 10px;
+    background-color: #ffd128;
+    content: '';
+    z-index: -1;
+  }
 `
 
 const Conatiner = styled.div`
-  padding: 20px 0;
+  padding: 20px 10px;
+  margin: 0 10px;
   box-sizing: border-box;
   flex: 1 1 auto;
   flex-direction: row;
   justify-content: space-between;
   display: flex;
+  transition: box-shadow, transform 200ms ease 0s;
 
-  &:not(:last-child) {
-    border-bottom: 1px solid #efefef;
+  &:hover {
+    border: 1px solid;
+    transform: translateY(-2px);
+    box-shadow: 8px 7px 0px 3px rgba(33, 33, 33, 0.2);
   }
 `
 
@@ -71,18 +90,20 @@ type CardProps = {
 function Card({ category, posts }: CardProps) {
   return (
     <CardContainer>
-      <CardTitle># {category}</CardTitle>
+      <CardTitle>{category}</CardTitle>
       {posts.slice(0, 3).map(({ date, title, slug, summary, thumbnail }) => {
         return (
           <Link href={`/category/${category}/${slug}`} key={slug}>
-            <Conatiner>
-              <Body>
-                <Title>{title}</Title>
-                {summary && <Summary>{summary}</Summary>}
-                <Date>{format(date, 'yyyy-MM-dd')}</Date>
-              </Body>
-              {thumbnail && <Thumbnail src={thumbnail} />}
-            </Conatiner>
+            <a href={`/category/${category}/${slug}`}>
+              <Conatiner>
+                <Body>
+                  <Title>{title}</Title>
+                  {summary && <Summary>{summary}</Summary>}
+                  <Date>{format(date, 'yyyy-MM-dd')}</Date>
+                </Body>
+                {thumbnail && <Thumbnail src={thumbnail} />}
+              </Conatiner>
+            </a>
           </Link>
         )
       })}

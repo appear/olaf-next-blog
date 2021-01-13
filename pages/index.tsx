@@ -12,9 +12,7 @@ interface HomeProps {
   rawData: Record<string, string[]>
 }
 
-const Container = styled.div`
-  padding: 0 20px;
-`
+const Container = styled.div``
 
 export default function MainPage({ rawData }: HomeProps) {
   const contents = useMemo(() => generatePostsFormRawData(rawData), [rawData])
