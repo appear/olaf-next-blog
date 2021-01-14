@@ -5,12 +5,12 @@ import Link from 'next/link'
 import { Post } from '$types/post'
 import PostCard from '$post/card'
 
-const CardContainer = styled.div`
+const ListContainer = styled.div`
   margin: 35px 0 45px 0;
   cursor: pointer;
 `
 
-const CardTitle = styled.h2`
+const ListTitle = styled.h2`
   font-size: 24px;
   font-weight: 700;
   margin: 0 20px 30px 20px;
@@ -37,14 +37,14 @@ type CardProps = {
 
 function PostList({ category, posts }: CardProps) {
   return (
-    <CardContainer>
+    <ListContainer>
       <Link href={`/category/${category}`}>
-        <CardTitle>{category}</CardTitle>
+        <ListTitle>{category}</ListTitle>
       </Link>
       {posts.slice(0, 3).map((post) => (
         <PostCard key={post.slug} post={post} />
       ))}
-    </CardContainer>
+    </ListContainer>
   )
 }
 

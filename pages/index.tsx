@@ -1,20 +1,20 @@
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 
-import Layout from '../src/components/layout'
+import Layout from '$components/layout'
+import { getAllRawPosts } from '$utils/file'
+import Card from '$components/posts/post-list'
+import { generatePostsFormRawData } from '$utils/post'
+
 import siteMeta from '../config'
-import { getAllRawPosts } from '../src/utils/file'
 
-import Card from '$posts/card'
-import { generatePostsFormRawData } from '$posts/utils'
-
-interface HomeProps {
+interface MainPageProps {
   rawData: Record<string, string[]>
 }
 
 const Container = styled.div``
 
-export default function MainPage({ rawData }: HomeProps) {
+export default function MainPage({ rawData }: MainPageProps) {
   const contents = useMemo(() => generatePostsFormRawData(rawData), [rawData])
 
   return (

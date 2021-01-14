@@ -6,7 +6,7 @@ import siteMeta from '../../../config'
 
 import Layout from '$components/layout'
 import { getAllRawPosts } from '$utils/file'
-import { generatePostsFormRawData } from '$posts/utils'
+import { generatePostsFormRawData } from '$utils/post'
 import { Post } from '$types/post'
 import PostCard from '$post/card'
 
