@@ -25,7 +25,7 @@
       "$page/*": ["./pages/*"],
       "$components/*": ["./src/components/*"],
       "$layout/*": ["./src/components/layout/*"],
-      "$post/*": ["./src/components/post/*"],
+      "$post/*": ["src/components/detail/*"],
       "$posts/*": ["./src/components/posts/*"],
       "$shared/*": ["./src/components/shared/*"],
       "$types/*": ["./src/types/*"],

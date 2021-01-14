@@ -5,7 +5,7 @@ import AppearSection from '../../src/components/shared/appear-section'
 import Layout from '../../src/components/layout'
 import Image from '../../src/components/shared/image'
 
-import style from '../../src/components/post/style'
+import style from '../../src/components/detail/style'
 import HorizentalImages from '../../src/components/shared/horizental-images'
 
 const Wrapper = styled.div`

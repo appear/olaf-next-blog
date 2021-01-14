@@ -5,7 +5,7 @@ import matter from 'gray-matter'
 import { CONTENTS_BASE_PATH, getAsyncFile } from '$utils/file'
 import Layout from '$components/layout'
 import { Post } from '$types/post'
-import MarkdownPost from '$post/markdown-post'
+import MarkdownPost from '$components/detail/markdown-post'
 
 interface PostPageProps {
   rawData: string
