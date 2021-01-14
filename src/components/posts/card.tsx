@@ -91,20 +91,20 @@ type CardProps = {
 function Card({ category, posts }: CardProps) {
   return (
     <CardContainer>
-      <CardTitle>{category}</CardTitle>
+      <Link href={`/category?name=${category}`}>
+        <CardTitle>{category}</CardTitle>
+      </Link>
       {posts.slice(0, 3).map(({ date, title, slug, summary, thumbnail }) => {
         return (
           <Link href={`/category/${category}/${slug}`} key={slug}>
-            <a href={`/category/${category}/${slug}`}>
-              <Conatiner>
-                <Body>
-                  <Title>{title}</Title>
-                  {summary && <Summary>{summary}</Summary>}
-                  <Date>{format(date, 'yyyy-MM-dd')}</Date>
-                </Body>
-                {thumbnail && <Thumbnail src={thumbnail} />}
-              </Conatiner>
-            </a>
+            <Conatiner>
+              <Body>
+                <Title>{title}</Title>
+                {summary && <Summary>{summary}</Summary>}
+                <Date>{format(date, 'yyyy-MM-dd')}</Date>
+              </Body>
+              {thumbnail && <Thumbnail src={thumbnail} />}
+            </Conatiner>
           </Link>
         )
       })}
