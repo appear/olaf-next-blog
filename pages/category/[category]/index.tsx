@@ -2,7 +2,7 @@ import React, { useReducer } from 'react'
 import { NextPageContext } from 'next'
 import styled from 'styled-components'
 
-import siteMeta from '../../config'
+import siteMeta from '../../../config'
 
 import Layout from '$components/layout'
 import { getAllRawPosts } from '$utils/file'
@@ -60,24 +60,24 @@ function generateInitialState({
   rawData: Record<string, string[]>
 }): State {
   const contents = generatePostsFormRawData(rawData)
+  const selectedCategory = contents[initialCategory] ? initialCategory : 'ALL'
 
   return {
     contents,
     categories: ['ALL', ...Object.keys(contents)],
-    selectedCategory: contents[initialCategory] ? initialCategory : 'ALL',
+    selectedCategory: selectedCategory,
     filteredContetns:
-      initialCategory === 'ALL'
+      selectedCategory === 'ALL'
         ? Object.values(contents).reduce((allPosts, posts) => {
             return [...allPosts, ...posts]
           }, [])
-        : contents[initialCategory],
+        : contents[selectedCategory],
   }
 }
 
 function reducer(state: State, action: Action) {
   switch (action.type) {
     case 'SET_CATEGORY': {
-      console.log('action', action)
       const selectedCategory = action.payload
       const filteredContetns =
         selectedCategory === 'ALL'
@@ -148,12 +148,12 @@ export default function CategoryPage({
 
 export async function getServerSideProps(context: NextPageContext) {
   const rawData = await getAllRawPosts()
-  const { name } = context.query
+  const { category = 'ALL' } = context.query
 
   return {
     props: {
       rawData,
-      initialCategory: name as string,
+      initialCategory: category,
     },
   }
 }

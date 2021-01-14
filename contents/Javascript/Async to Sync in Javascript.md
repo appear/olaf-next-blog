@@ -1,5 +1,5 @@
 ---
-slug: Async to Sync in Javascript
+slug: Javascript/Async to Sync in Javascript
 title: Async to Sync in Javascript
 summary: 답은 없다.
 date: 2020-11-09

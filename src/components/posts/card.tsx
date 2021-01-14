@@ -38,11 +38,11 @@ type CardProps = {
 function PostList({ category, posts }: CardProps) {
   return (
     <CardContainer>
-      <Link href={`/category?name=${category}`}>
+      <Link href={`/category/${category}`}>
         <CardTitle>{category}</CardTitle>
       </Link>
       {posts.slice(0, 3).map((post) => (
-        <PostCard key={post.slug} category={category} post={post} />
+        <PostCard key={post.slug} post={post} />
       ))}
     </CardContainer>
   )

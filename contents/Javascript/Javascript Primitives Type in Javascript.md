@@ -1,5 +1,5 @@
 ---
-slug: Javascript Primitives Type in Javascript
+slug: Javascript/Javascript Primitives Type in Javascript
 title: Javascript Primitives Type in Javascript
 summary: 답은 없다.
 date: 2020-11-09

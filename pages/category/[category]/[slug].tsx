@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import { NextPageContext } from 'next'
 import matter from 'gray-matter'
 
-import { CONTENTS_BASE_PATH, getAsyncFile } from '$utils/file'
+import { getAsyncFile } from '$utils/file'
 import Layout from '$components/layout'
 import { Post } from '$types/post'
 import MarkdownPost from '$components/detail/markdown-post'
@@ -41,16 +41,10 @@ function PostPage({ category, rawData }: PostPageProps) {
 export async function getServerSideProps(context: NextPageContext) {
   const { category, slug } = context.query
 
-  const path =
-    category === 'common'
-      ? `${CONTENTS_BASE_PATH}/${slug}.md`
-      : `${CONTENTS_BASE_PATH}/${category}/${slug}.md`
-
-  const rawData = await getAsyncFile(path)
+  const rawData = await getAsyncFile(`${category}/${slug}.md`)
 
   return {
     props: {
-      category,
       rawData,
     },
   }

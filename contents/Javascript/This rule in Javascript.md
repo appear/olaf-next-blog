@@ -1,5 +1,5 @@
 ---
-slug: This rule in Javascript
+slug: Javascript/This rule in Javascript
 title: This rule in Javascript
 summary: 답은 없다.
 date: 2020-11-09

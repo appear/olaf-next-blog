@@ -1,5 +1,5 @@
 ---
-slug: Lexical Scope in Javascript
+slug: Javascript/Lexical Scope in Javascript
 title: Lexical Scope in Javascript
 summary: 답은 없다.
 date: 2020-11-09

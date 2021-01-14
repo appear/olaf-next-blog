@@ -60,13 +60,16 @@ const Body = styled.div`
 
 function Card({
   post: { date, title, slug, summary, thumbnail },
-  category,
 }: {
   post: Post
-  category?: string
 }) {
+  const [categoy, fileName] = slug.split('/')
+
   return (
-    <Link href={`/category/${category}/${slug}`} key={slug}>
+    <Link
+      href={`/category/${categoy}/${encodeURIComponent(fileName)}`}
+      key={slug}
+    >
       <Conatiner>
         <Body>
           <Title>{title}</Title>
