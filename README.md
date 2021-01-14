@@ -4,6 +4,6 @@
 ## Post CLI 
 
 ```
-$ npm run post --help 
-$ npm run post "<file-name>" -c <category>
+$ node cli --help 
+$ node cli "<file-name>" -c <category-name>
 ```

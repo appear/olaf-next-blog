@@ -1,10 +1,12 @@
 const fs = require('fs')
 const dateFns = require('date-fns')
 
-function generateMarkdownTemplate({ fileName, category = '' }) {
+const CONTENTS_BASE_PATH = `${process.cwd()}/contents`
+
+function generateMarkdownTemplate({ fileName }) {
   const data = dateFns.format(new Date(), 'yyyy-MM-dd')
 
-  return `---\nslug: ${fileName}\ntitle: ${fileName}\nsummary:\ndate: ${data}\ncategory: ${category}\n---\n\n# ${fileName}`
+  return `---\nslug: ${fileName}\ntitle: ${fileName}\nsummary:\ndate: ${data}\n---\n\n# ${fileName}`
 }
 
 module.exports = ({ fileName, category }) => {
@@ -13,7 +15,13 @@ module.exports = ({ fileName, category }) => {
     process.exit(1)
   }
 
-  const filePath = process.cwd() + `/contents/${fileName}.md`
+  if (category && !fs.existsSync(`${CONTENTS_BASE_PATH}/${category}`)) {
+    fs.mkdirSync(`${CONTENTS_BASE_PATH}/${category}`)
+  }
+
+  const filePath = `${CONTENTS_BASE_PATH}`.concat(
+    category ? `/${category}/${fileName}.md` : `/${fileName}.md`,
+  )
 
   if (fs.existsSync(filePath)) {
     console.log('👉 File already exists')

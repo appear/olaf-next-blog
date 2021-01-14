@@ -9,9 +9,10 @@ program
   .arguments('<file-name>', '', '')
   .usage(`${chalk.green('<file-name>')} [options]`)
   .action(function (name) {
+    console.log('name', name)
     fileName = name
   })
-  .option('-c, --category <type>')
+  .option('-c, --category <type>', 'post category')
   .on('--help', () => {
     console.log('')
     console.log('Example call:')
