@@ -4,4 +4,5 @@ export type Post = {
   summary?: string
   date: Date
   thumbnail?: string
+  category: string
 }
