@@ -14,7 +14,7 @@ const CardContainer = styled.div`
 const CardTitle = styled.h2`
   font-size: 24px;
   font-weight: 700;
-  margin: 0 20px 20px 20px;
+  margin: 0 20px 30px 20px;
   position: relative;
   display: inline-block;
 
@@ -32,7 +32,7 @@ const CardTitle = styled.h2`
 `
 
 const Conatiner = styled.div`
-  padding: 20px 10px;
+  padding: 10px;
   margin: 0 10px;
   box-sizing: border-box;
   flex: 1 1 auto;
@@ -40,6 +40,7 @@ const Conatiner = styled.div`
   justify-content: space-between;
   display: flex;
   transition: box-shadow, transform 200ms ease 0s;
+  min-height: 120px;
 
   &:hover {
     border: 1px solid;
